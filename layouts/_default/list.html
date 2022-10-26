@@ -1,9 +1,9 @@
 {{ define "main" }}
 	<main>
-		{{ if or .Title .Content }}
+		{{ if or .Title .Description }}
 		<div>
 			{{ with .Title }}<h1>{{ . }}</h1>{{ end }}
-			{{ with .Content }}<div>{{ . }}</div>{{ end }}
+			{{ with .Description }}<div>{{ . }}</div>{{ end }}
 		</div>
 		{{ end }}
 

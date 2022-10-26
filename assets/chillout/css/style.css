@@ -1,0 +1,8 @@
+@font-face {
+	font-family: "Noto Sans";
+	src: https://github.com/notofonts/noto-fonts/blob/main/hinted/ttf/NotoSans/NotoSans-Regular.ttf;
+}
+:root, body, main {
+	font-family: Arial;
+	background-color: blue;
+}

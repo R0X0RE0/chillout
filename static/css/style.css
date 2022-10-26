@@ -1,0 +1,51 @@
+
+@font-face {
+	font-family: "Noto Sans";
+	src: https://github.com/notofonts/noto-fonts/blob/main/hinted/ttf/NotoSans/NotoSans-Regular.ttf;
+}
+:root, body, main {
+	font-family: "Noto Sans";
+	background-color: #273138;
+	color: #c3d2d6;
+	padding-left: 10%;
+	width: 80%;
+}
+main {
+	width: 65% !important;
+	padding: 2% !important;
+}
+a {
+	color: #669FC6;
+}
+a:visited {
+	color: #4f6380;
+}
+a:hover {
+	color: #528CB2;
+}
+button {
+
+}
+button:hover {
+	cursor: pointer;
+}
+.navList {
+	display: inline-block;
+	list-style-type: "";
+	float: right;
+	position: relative;
+	padding-left: 20%;
+}
+.navClass a {
+	font-size: 18pt;
+	color: #c3d2d6 !important;
+	text-decoration: none;
+}
+.navClass a:hover {
+	color: #b3bfca !important;
+}
+.paramSection {
+	margin-left: 0%;
+	padding: 5%;
+	background-color: #1F2A32;
+}
