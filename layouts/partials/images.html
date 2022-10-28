@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: monospace
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* The browser window */
+.container {
+  width: 50%;
+}
+
+/* Container for columns and the top "toolbar" */
+.row {
+  padding: 10px;
+  background: #434c5e;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+/* Create three unequal columns that floats next to each other */
+.column {
+  float: left;
+}
+
+.left {
+  width: 15%;
+}
+
+.right {
+  width: 10%;
+}
+
+.middle {
+  width: 75%;
+  text-align: center;
+  color: #eceff4;
+  font-family: 'Noto Sans';
+  font-size: 12pt;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Three dots */
+.dot {
+  margin-top: 4px;
+  height: 12px;
+  width: 12px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* Style the input field */
+input[type=text] {
+  width: 100%;
+  border-radius: 3px;
+  border: none;
+  background-color: white;
+  margin-top: -8px;
+  height: 25px;
+  color: #666;
+  padding: 5px;
+}
+
+/* Three bars (hamburger menu) */
+.bar {
+  width: 17px;
+  height: 3px;
+  background-color: #aaa;
+  margin: 3px 0;
+  display: block;
+}
+
+/* Page content */
+.content {
+  padding:10px;
+  height:500px;
+  background-color:#2e3440;
+  color: #eceff4;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.imageList img{
+        max-width:256px;
+        max-height:256px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+}
+.imageList img:hover {
+    cursor: pointer;
+}
+.imageList{
+  box-sizing: border-box;
+  height:475px;
+  width: 275px;
+  z-index: 1;
+  overflow-x: hidden;
+  display: inline-block;
+}
+.displayedImage img {
+    max-width: 640px;
+    max-height: 480px;
+}
+.displayedImage {
+    margin: auto;
+    padding-left: 15%;
+    display: inline-block;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="row">
+    <div class="column left">
+    	<img src="https://roxnoanne.xyz/polaroid_one_step.svg">
+    </div>
+    <div class="column middle">
+    	Image Viewer
+    </div>
+    <div class="column right">
+      <div style="float:right">
+        
+        <span class="dot" style="background:#ebcb8b;"></span>
+      <span class="dot" style="background:#a3be8c;"></span>
+      <span class="dot" style="background:#bf616a;"></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="content">
+    
+    <div class="imageList">
+		  <img src="250px-Mascot_konqi.png" onclick="document.getElementById('displayImage').src = '250px-Mascot_konqi.png';"> <br /> <br />
+		  <img src="han-tyumi.png" onclick="document.getElementById('displayImage').src = 'han-tyumi.png';"> <br /> <br />
+		  <img src="infest_the_rats_nest.png" onclick="document.getElementById('displayImage').src = 'infest_the_rats_nest.png';"> <br /> <br />
+		  <img src="gizzy.jpeg" onclick="document.getElementById('displayImage').src = 'gizzy.jpeg';"> <br /> <br />
+		  <img src="carrion-crawler.png" onclick="document.getElementById('displayImage').src = 'carrion-crawler.png';"> <br /> <br />
+		  <img src="flying_microtonal_banana.png" onclick="document.getElementById('displayImage').src = 'flying_microtonal_banana.png';"> <br /> <br />
+    </div>
+    <div class="displayedImage">
+        <img src="250px-Mascot_konqi.png" id="displayImage">
+    </div>
+   </div>
+</div>
+
+</body>
+</html> 
+

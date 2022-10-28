@@ -1,12 +1,18 @@
 <header>
 	<nav class="navClass">
-	<a style="display:inline-block;" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
-	{{ with .Site.Menus.main }}
+	<div>
+	<div class="navContainer">
+	<input type="checkbox"  class="navCheck" />
+	<div class="icon"><div class="lines"></div></div>
 		<ul class="navList">
+			<a style="display:inline-block;" href="{{ .Site.BaseURL }}"><li>Home</li></a>
+			{{ with .Site.Menus.main }}
 			{{ range . }}
-			<li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
+			<a href="{{ .URL | relURL }}"><li>{{ .Name }}</li></a>
 			{{ end }}
 		</ul>
+	</div>
+	</div>
 	</nav>
 	{{ end }}
 

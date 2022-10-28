@@ -2,7 +2,13 @@
 	<main>
 		<article>
 			<h1>{{ .Title }}</h1>
-			<time datetime="{{ .Date.Format "2006-01-02T15:04:05" }}">{{ .Date.Format "Monday, Jan 02, 2006" }}</time>
+			<h2> by {{ .Param "author" }} </h2>
+			<h3> {{ .WordCount }} Words, estimated {{ .ReadingTime }} minute(s) to read through </h3>
+			<time datetime="{{ .Date.Format "2006-01-02T15:04:05" }}">Created on {{ .Date.Format "Monday, Jan 02, 2006" }}</time>
+			{{ if .Description }}
+			<h2> Description </h2>
+			<p> {{ .Description }} </p>
+			{{ end }}
 			<div>
 				{{ .Content }}
 			</div>
@@ -13,6 +19,7 @@
 					<li><a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></li>
 					{{ end }}
 				</ul>
+				
 			</div>
 			{{ end }}
 			{{ with .Site.DisqusShortname }}

@@ -7,12 +7,26 @@
 	font-family: "Noto Sans";
 	background-color: #273138;
 	color: #c3d2d6;
-	padding-left: 10%;
-	width: 80%;
 }
-main {
-	width: 65% !important;
+main, footer, aside {
 	padding: 2% !important;
+
+	width: 60%;
+	margin-left: 12%;
+}
+@media only screen and (orientation: portrait) {
+	:root, body, main {
+		width: 100%;
+		margin-left: 0%;
+	}
+	.navList {
+		transform-origin: 0% 0%;
+		transform: translate(0, -300%);
+		transition: transform 0.5s;
+	}
+	.navCheck:checked ~ .navList {
+		transform: translate(0%, 0%);
+	}
 }
 a {
 	color: #669FC6;
@@ -30,18 +44,103 @@ button:hover {
 	cursor: pointer;
 }
 .navList {
-	display: inline-block;
 	list-style-type: "";
-	float: right;
-	position: relative;
-	padding-left: 20%;
+	position: absolute;
+	background-color: #212A32;
+	transform-origin: 0% 0%;
+	transform: translate(-300%);
+	transition: transform 0.5s;
+	height: 100%;
+	top: 4%;
+	padding-top: 2%;
+	padding-right: 2%;
+}
+header {
+	background-color: #1E262D;
+	width: 100%;
+	height: 5em;
+	
+}
+.lines,
+.lines::before,
+.lines::after {
+	display: block;
+	height: 0.2em;
+	background: #c3d2d6;
+	width: 1.5em;
+	transition: all 0.2s;
+	position: absolute;
+}
+.navCheck {
+	height: 2.0em;
+	width: 2.0em;
+	opacity: 0;
+	position: absolute;
+	z-index: 2;
+	display: inline-grid;
+	margin-top: 1%;
+	margin-left: 2%;
+}
+.icon {
+	position: absolute;
+	margin-top: 2%;
+	margin-left: 2%;
+}
+.icon > *,
+.navCheck > * {
+	grid-column-start: 1;
+	grid-row-start: 1;
+}
+.icon > * {
+
+}
+.navList li{
+	display: block;
+}
+#navMenu {
+	opacity: 0;
+}
+#navMenu:hover {
+	cursor: pointer;
+}
+.navCheck:hover {
+	cursor: pointer;
+}
+.lines {
+
+}
+.lines::before {
+	content: '';
+	top: -8px;
+}
+.lines::after {
+	content: '';
+	top: 8px;
+}
+.navCheck:checked ~ main {
+	display:none;
+}
+.navCheck:checked + .icon > .lines {
+	transform: rotate(45deg);
+}
+.navCheck:checked + .icon > .lines::before {
+	transform: rotate(45deg);
+	opacity: 0;
+}
+.navCheck:checked + .icon > .lines::after {
+	transform: rotate(90deg) translate(-8px, 0px);
+}
+.navCheck:checked ~ .line2 {
+	opacity: 0;
+}
+.navCheck:checked ~ .navList {
+	transform: translate(0%);
 }
 .navClass a {
 	font-size: 18pt;
 	color: #c3d2d6 !important;
 	text-decoration: none;
-}
-.navClass a:hover {
+}.navClass a:hover {
 	color: #b3bfca !important;
 }
 .paramSection {

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: monospace
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* The browser window */
+.container {
+  width: 50%;
+}
+
+/* Container for columns and the top "toolbar" */
+.row {
+  padding: 10px;
+  background: #434c5e;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+/* Create three unequal columns that floats next to each other */
+.column {
+  float: left;
+}
+
+.left {
+  width: 15%;
+}
+
+.right {
+  width: 10%;
+}
+
+.middle {
+  width: 75%;
+  text-align: center;
+  color: #eceff4;
+  font-family: 'Noto Sans';
+  font-size: 12pt;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Three dots */
+.dot {
+  margin-top: 4px;
+  height: 12px;
+  width: 12px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* Style the input field */
+input[type=text] {
+  width: 100%;
+  border-radius: 3px;
+  border: none;
+  background-color: white;
+  margin-top: -8px;
+  height: 25px;
+  color: #666;
+  padding: 5px;
+}
+
+/* Three bars (hamburger menu) */
+.bar {
+  width: 17px;
+  height: 3px;
+  background-color: #aaa;
+  margin: 3px 0;
+  display: block;
+}
+
+/* Page content */
+.content {
+  padding:10px;
+  height:500px;
+  background-color:#2e3440;
+  color: #eceff4;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.typing {
+    overflow: hidden;
+    border-right: 6pt solid transparent;
+    display: inline-block;
+    position: absolute;
+    margin: 0;
+    white-space:nowrap;
+    width: 15%;
+    animation:
+    	typeAnim 1s steps(20,end) 1s 1 normal both,
+	blinking 0.75s step-end 3;
+}
+@keyframes typeAnim {
+	from {width: 0}
+	to {width: 5.75%}
+}
+@keyframes blinking {
+	from, to { border-color: white }
+    50% { border-color: transparent };
+}
+.outputText {
+	overflow: hidden;
+	display: inline-block;
+	position: absolute;
+	margin: 0;
+	white-space: nowrap;
+	animation:
+		printOutput 2.3s steps(1,end);
+}
+@keyframes printOutput {
+	from, to { visibility: hidden};
+}
+.flashingIndicator {
+    overflow: hidden;
+    border-right: 6pt solid transparent;
+    display: inline-block;
+    position: absolute;
+    white-space:nowrap;
+    margin-top:12%;
+    animation:
+	    showText 2.3s step-end,
+	    blinking 0.75s step-end 2.3s infinite;
+}
+@keyframes showText {
+	from, to {visibility: hidden};
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="row">
+    <div class="column left">
+    	<img src="https://roxnoanne.xyz/terminal_icon.svg">
+    </div>
+    <div class="column middle">
+    	Terminal Emulator
+    </div>
+    <div class="column right">
+      <div style="float:right">
+        
+        <span class="dot" style="background:#ebcb8b;"></span>
+      <span class="dot" style="background:#a3be8c;"></span>
+      <span class="dot" style="background:#bf616a;"></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="content">
+		  <p><a style="color:#a3be8c;">user@roxnoanne.xyz</a>:<a style="color:#5e81ac;">~</a>$&ensp;<span class="typing">cat myContacts</span></p>
+	
+		<div class="outputText">
+            Discord
+            <br />------------<br />
+            RoxNoAnne#6418 
+            <br /><br />
+            <br />
+            Email
+            <br />------------<br />
+            <a href="mailto:kawaiicucumber572@gmail.com" style="color:#5e81ac;">kawaiicucumber572@gmail.com</a> <br /><br /> 
+            <br />
+            Minecraft
+            <br />------------<br />
+            <a href="https://mc.roxnoanne.xyz" target="_newtab" style="color:#5e81ac;">mc.roxnoanne.xyz</a> <br /><br />
+            <br />
+		</div>
+		 
+	 <div class="flashingIndicator">
+		 <a style="color:#a3be8c;">user@roxnoanne.xyz</a>:<a style="color:#5e81ac;">~</a>$&ensp;
+		 </div>
+   </div>
+</div>
+
+</body>
+</html> 
+
